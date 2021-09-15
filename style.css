@@ -23,56 +23,127 @@ p{
 ul{
     list-style-type: none;
 }
+
+  header .container {
+    /* outline: 1px solid #999; */
+    display: flex;
+    padding: 0;
+    z-index: 999;
+    position: relative;
+  }
 #main-header{
-    min-width: 1200px;
+   
     width: 100%;
     z-index: 999;
-    position: absolute;
-    left: 0; top: 0;
-    height: 172px;
+   
+    
+    height: 190px;
+    box-shadow: 1px 1px 4px var(--sub-color1);
 }
 #main-header h1{
     position: absolute;
     left: 900px;
-    top: 25px;
+    top: 20px;
 }
 #main-header h1 img{
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
 }
 #gnb{
     position: absolute;
-    right: 690px;
-    top: 160px;
+    left: 430px;
+    top: 100px;
 }
 #gnb > ul > li{
     display: inline-block;
-    margin-left: 57px;
+    width: 8rem;
+   
 }
 #gnb > ul > li > a{
     text-decoration: none;
-    color: #707070;
+    color: #444;
     text-transform: uppercase; /*첫글자만 대문자*/
     font-weight: 700;
     font-size: 20px;
 }
-#gnb > ul > li > a:hover{
-    color: var(--sub-color1);
-}
-#tilte{
+
+.depth1 {
+    display: flex; 
+    /* outline: 1px solid red; */
+    margin-top: 30px;
+    text-align: center;
+  }
+
+  .depth1 > li {
+    margin-left: 4em;
+    /* background: #abc; */
+    /* outline: 1px solid; */
+  }
+
+  .depth2 {
+    margin-top: 40px;
+    transition: 0.4s;
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+  }
+
+  .depth2.show {
+    opacity: 1;
+    max-height: 280px;
+  }
+
+  .depth2 > li {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    
+  }
+
+  .depth2 > li > a {
+    display: block;
+    padding: 10px 0;
+    text-decoration: none;
+    color: #070707;
+  }
+
+  .depth2 > li > a:hover {
+    color: var(--main-color);
+    font-weight: bold;
+  }
+
+  /* 2단계 네비게이션 배경 */
+  .nav_bg {
+    position: absolute;
+    left: 0; top: 195px;
+    height: 0;
+    width: 100%;
+    background: rgba(255,255,255,1);
+    transition: 0.4s;
+    z-index: 999;
+    overflow: hidden;
+    
+  }
+
+  .nav_bg.show {
+    height: 280px;
+  }
+.tilte{
     min-width: 1200px;
     width: 100%;
+    height: 500px;
+   outline: 1px solid rebeccapurple;
+   background-color: rebeccapurple;
 }
 #title .title-group{
     /*outline: 1px solid rebeccapurple;*/
-    width: 50%;
+    width: 45%;
     float: left;
-    padding-left: 100px;
+    padding-left: 180px;
    /* padding-top: 50px; */
     height: calc(100vh - 172px);
     display: flex;
-    align-items: center; /*수직정렬*/
-    padding-top: 230px;
+    
+    padding-top: 0px;
 }
  
     
@@ -81,36 +152,38 @@ ul{
    /* outline: 1px solid red;*/
 
 }
-p{
-    padding-bottom: 20px;
-    font-size: 15px;
-    color: #707070;
-    
-}
+
 p.one{
     font-weight: bold;
-    font-size: 25px;
+    font-size: 70px;
+    color: var(--main-color);
+    padding-bottom: 30px;
 }
 p.best{
     font-weight: bold;
+    font-size: 25px;
+    color: #444;
+    padding-bottom: 30px;
 }
-
+#title{
+    bk
+}
 #title .title-group h2{
-    font-size: 40px;
-    font-weight: lighter;
-    margin-bottom: 30px;
-    font-family: 'Bowlby One SC', cursive;
-    color: var(--main-color);
+    font-size: 20px;
+    padding-top: 120px;
+    margin-bottom: 20px;
+     color: var(--sub-color1);
+    
 }
-#title .title-group h2 > span{
+#title .title-group h1{
     font-weight: bolder;
-    color: var(--sub-color1);
-    font-size: 90px;
-    font-family: 'Bowlby One SC', cursive;
+    color: #444;
+    font-size: 30px;
+   padding-bottom: 40px;
 }
 #title figure{
     /*outline: 1px solid royalblue;*/
-    width: 50%;
+    width: 55%;
     float: left;
    
     height: calc(100vh);
@@ -120,7 +193,7 @@ p.best{
     background-image: url(./images/Untitled-2.png);
     background-repeat: no-repeat;
     
-    margin-top: 200px;
+    margin-top: 50px;
     background-size: cover;
     margin-right: 0px;
     /*background: linear-gradient(0deg,#9DC3BF,#fff 30%);*/
@@ -131,21 +204,23 @@ p.best{
     margin-top: -150px;
 }
 .more-btn{
-    background-color: var(--main-color);
+    
     display: inline-block;
-    color: white;
+   
     text-decoration: none;
     padding: 10px 25px;
     border-radius: 20px;
     margin-top: 1em;
-    font-weight: bold;
-}
-.more-btn:hover{
-    background-color: white;
+    
+    
     color:var(--main-color);
     
     border: 2px solid var(--main-color);
-    
+}
+.more-btn:hover{
+    font-weight: bold;
+    background-color: var(--main-color);
+    color: white;
 }
 /* 하단 이미지 아이콘 */
 nav.pager {
@@ -173,7 +248,7 @@ nav.pager > ul > li > a > img{
 nav.sns {
     position: fixed;
     right: 50px;
-    top: 50%;
+    top: 60%;
     transform: translateY(-50%);
 }
 nav.sns img{
